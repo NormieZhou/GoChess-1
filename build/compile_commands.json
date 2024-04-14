@@ -1,0 +1,7 @@
+[
+{
+  "directory": "C:/Users/Parib/Desktop/GoChess/build",
+  "command": "C:\\MinGW\\bin\\mingw32-gcc.exe   -g -o CMakeFiles\\GoChess.dir\\main.c.obj -c C:\\Users\\Parib\\Desktop\\GoChess\\main.c",
+  "file": "C:/Users/Parib/Desktop/GoChess/main.c"
+}
+]

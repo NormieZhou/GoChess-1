@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\GoChess.dir/objects.a
+C:\MinGW\bin\ar.exe qc CMakeFiles\GoChess.dir/objects.a @CMakeFiles\GoChess.dir\objects1.rsp
+C:\MinGW\bin\mingw32-gcc.exe -g -Wl,--whole-archive CMakeFiles\GoChess.dir/objects.a -Wl,--no-whole-archive -o GoChess.exe -Wl,--out-implib,libGoChess.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\GoChess.dir\linklibs.rsp
