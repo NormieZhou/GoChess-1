@@ -34,4 +34,9 @@ void init_board(struct Board *board);
 // Function to copy the board
 void copy_board(struct Board *src, struct Board *dest);
 
+void print_board(struct Board* board);
+
+struct Piece* create_piece(enum PieceType type, enum PlayerColor color);
+
+
 #endif /* BOARD_H */
