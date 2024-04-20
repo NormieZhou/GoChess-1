@@ -1,11 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "AI.h"
-#include "Board.h"
-#include "CheckMove.h"
-#include "EndGame.h"
-#include "Log.h"
-
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
@@ -40,7 +32,7 @@ struct Move get_user_move() {
 }
 
 int main(void) {
-    //board initialization
+    // board initialization
     struct Board board;
     init_board(&board);
 
@@ -49,8 +41,8 @@ int main(void) {
     struct Player* black_player = create_player('B', false);
 
     print_board(&board);
-    struct Move m = get_user_move();
     while (true) {
+        struct Move m = get_user_move();
         move_piece(&board, &m);
         print_board(&board);
     }
