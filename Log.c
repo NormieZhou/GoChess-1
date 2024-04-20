@@ -57,8 +57,4 @@ void undo_move(struct BoardList* list) {
     }
 }
 
-void clear_board_list(struct BoardList* list) {
-    while (list->head != NULL) {
-        delete_board(list);
-    }
-}
+
