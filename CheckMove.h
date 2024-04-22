@@ -11,5 +11,6 @@ bool check_move_rook(struct Board* board, struct Piece* piece, struct Move* move
 bool check_move_queen(struct Board* board, struct Piece* piece, struct Move* move);
 bool check_move_king(struct Board* board, struct Piece* piece, struct Move* move);
 bool special_moves(struct Board* board, struct Piece* piece, struct Move* move);
+bool is_legal_move(struct Board* board, struct Piece* piece, struct Move* move);
 
 #endif /* CHECKMOVE_H */
