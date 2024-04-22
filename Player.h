@@ -2,20 +2,20 @@
 #define PLAYER_H
 
 // Enumeration for player color
-typedef enum {
+enum PlayerColor {
     WHITE,
     BLACK
-} PlayerColor;
+} ;
 
 // Structure definition for Player
-typedef struct {
+struct Player {
     // Player color
-    PlayerColor color;
+    enum PlayerColor color;
     // Flag to indicate whether the player is a computer
     int isComputer;
-} Player;
+} ;
 
 // Function to create a player
-Player* create_player(PlayerColor color, int isComputer);
+struct Player* create_player(enum PlayerColor color, int isComputer);
 
 #endif /* PLAYER_H */
