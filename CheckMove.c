@@ -254,3 +254,27 @@ bool check_move_king(struct Board* board, struct Piece* piece, struct Move* move
 
     return true;
 }
+
+bool is_legal_move(struct Board* board, struct Piece* piece, struct Move* move) {
+    //
+    switch (piece->type) {
+    case PAWN:
+        return check_move_pawn(board, piece, move);
+    case KNIGHT:
+        return check_move_knight(board, piece, move);
+    case BISHOP:
+        return check_move_bishop(board, piece, move);
+    case ROOK:
+        return check_move_rook(board, piece, move);
+    case QUEEN:
+        return check_move_queen(board, piece, move);
+    case KING:
+        return check_move_king(board, piece, move);
+    default:
+        //
+        return false;
+    }
+}
+
+    return true;
+}
