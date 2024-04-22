@@ -10,5 +10,5 @@ Version: 0.1.0
 Chess Alpha Release
 21 April, 2024
 
-This is the final version of the chess software, to install, please type ”make”, for more detailed
+This is the final version of the chess software, to install, please type ”make all”, for more detailed
 instructions, refer to the user manual.
