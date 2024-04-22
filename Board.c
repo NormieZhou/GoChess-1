@@ -28,51 +28,51 @@ void init_board(struct Board* board) {
     // White pieces
     // Pawns
     for (int j = 0; j < 8; ++j) {
-        board->squares[1][j] = create_piece(PAWN, WHITE);
+        board->squares[6][j] = create_piece(PAWN, WHITE);
     }
 
     // Rooks
-    board->squares[0][0] = create_piece(ROOK, WHITE);
-    board->squares[0][7] = create_piece(ROOK, WHITE);
+    board->squares[7][0] = create_piece(ROOK, WHITE);
+    board->squares[7][7] = create_piece(ROOK, WHITE);
 
     // Knights
-    board->squares[0][1] = create_piece(KNIGHT, WHITE);
-    board->squares[0][6] = create_piece(KNIGHT, WHITE);
+    board->squares[7][1] = create_piece(KNIGHT, WHITE);
+    board->squares[7][6] = create_piece(KNIGHT, WHITE);
 
     // Bishops
-    board->squares[0][2] = create_piece(BISHOP, WHITE);
-    board->squares[0][5] = create_piece(BISHOP, WHITE);
+    board->squares[7][2] = create_piece(BISHOP, WHITE);
+    board->squares[7][5] = create_piece(BISHOP, WHITE);
 
     // Queen
-    board->squares[0][3] = create_piece(QUEEN, WHITE);
+    board->squares[7][3] = create_piece(QUEEN, WHITE);
 
     // King
-    board->squares[0][4] = create_piece(KING, WHITE);
+    board->squares[7][4] = create_piece(KING, WHITE);
 
 
     // Black pieces
     // Pawns
     for (int j = 0; j < 8; ++j) {
-        board->squares[6][j] = create_piece(PAWN, BLACK);
+        board->squares[1][j] = create_piece(PAWN, BLACK);
     }
 
     // Rooks
-    board->squares[7][0] = create_piece(ROOK, BLACK);
-    board->squares[7][7] = create_piece(ROOK, BLACK);
+    board->squares[0][0] = create_piece(ROOK, BLACK);
+    board->squares[0][7] = create_piece(ROOK, BLACK);
 
     // Knights
-    board->squares[7][1] = create_piece(KNIGHT, BLACK);
-    board->squares[7][6] = create_piece(KNIGHT, BLACK);
+    board->squares[0][1] = create_piece(KNIGHT, BLACK);
+    board->squares[0][6] = create_piece(KNIGHT, BLACK);
 
     // Bishops
-    board->squares[7][2] = create_piece(BISHOP, BLACK);
-    board->squares[7][5] = create_piece(BISHOP, BLACK);
+    board->squares[0][2] = create_piece(BISHOP, BLACK);
+    board->squares[0][5] = create_piece(BISHOP, BLACK);
 
     // Queen
-    board->squares[7][3] = create_piece(QUEEN, BLACK);
+    board->squares[0][3] = create_piece(QUEEN, BLACK);
 
     // King
-    board->squares[7][4] = create_piece(KING, BLACK);
+    board->squares[0][4] = create_piece(KING, BLACK);
 }
 
 
@@ -98,7 +98,7 @@ void print_board(struct Board* board) {
     // Iterate through each row
     for (int i = 0; i < 8; ++i) {
         // Print the row number
-        printf("%d ", 8 - i);
+        printf("%d ", i);
 
         // Iterate through each column
         for (int j = 0; j < 8; ++j) {
@@ -142,4 +142,30 @@ void print_board(struct Board* board) {
 
     // Print the column labels
     printf("    a    b    c    d    e    f    g    h\n");
+}
+
+
+bool move_piece(struct Board* board, struct Move* move) {
+    // Check if the starting and ending positions are within the board boundaries
+    if (move->start.x < 0 || move->start.x >= 8 || move->start.y < 0 || move->start.y >= 8 ||
+        move->end.x < 0 || move->end.x >= 8 || move->end.y < 0 || move->end.y >= 8) {
+        printf("Invalid move: positions out of bounds.\n");
+        return false;
+    }
+
+    // Get the piece at the starting position
+    struct Piece* piece = board->squares[move->start.y][move->start.x];
+
+    // Check if there is a piece at the starting position
+    if (piece == NULL) {
+        printf("Invalid move: no piece at the starting position.\n");
+        return false;
+    }
+
+    // Check if the piece can legally move to the ending position (implementation omitted)
+    // If the move is legal, update the board
+    board->squares[move->end.y][move->end.x] = piece;
+    board->squares[move->start.y][move->start.x] = NULL;
+
+    return true;
 }
