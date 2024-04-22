@@ -4,6 +4,12 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
+#ifndef BOARD_H
+#define BOARD_H
+
+#include <stdio.h>
+#include <stddef.h>
+#include <stdlib.h>
 #include <stdbool.h>
 #include "Player.h"
 
@@ -11,6 +17,7 @@
 enum PieceType {
     KING, QUEEN, ROOK, BISHOP, KNIGHT, PAWN
 };
+
 
 struct Piece {
     // Piece type
