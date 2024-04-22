@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99
-OBJ = AI.o Board.o CheckMove.o EndGame.o Log.o main.o Player.o
+OBJ = AI.o Board.o CheckMove.o EndGame.o Log.o main.o Player.o Game.o
 
 chess: $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o chess
@@ -25,6 +25,9 @@ main.o: main.c Board.h Player.h
 
 Player.o: Player.c Player.h
 	$(CC) $(CFLAGS) -c Player.c
+
+Game.o: Game.c Game.h
+	$(CC) $(CFLAGS) -c Game.c
 
 clean:
 	rm -f chess $(OBJ)
