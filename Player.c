@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 // Function to create a player
-Player* create_player(PlayerColor color, int isComputer) {
+struct Player* create_player(enum PlayerColor color, int isComputer) {
     // Allocate memory for the player structure
-    Player* player = (Player*)malloc(sizeof(Player));
+    struct Player* player = (struct Player*)malloc(sizeof(struct Player));
     if (player == NULL) {
         // Memory allocation failed
         return NULL;
